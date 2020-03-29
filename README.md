@@ -172,15 +172,19 @@ menurut [artikel Projective Transformations in 2D](https://mc.ai/part-ii-project
 
 Kita dapat merepresentasikan matriks projeksi sebagai berikut
 ```code
-[x', y', 1]=[[a11, a12, a13],
+[x', y', 1]=[
+             [a11, a12, a13],
              [a21, a22, a23],
-             [a31, a32, v  ]]  [x, y, 1]
+             [a31, a32, v  ]
+            ]  [x, y, 1]
 ```
 dengan v = 1 atau v = 0, dan dapat disederhanakan menjadi 
 ```code
-[wx', wy', w] = [[1,   0, 0],
-                [0,   1, 0],
-                [v1, v2, v]] [x, y, 1]
+[wx', wy', w] = [
+                  [1, 0, 0],
+                  [0, 1, 0],
+                  [v1, v2, v]
+                ] [x, y, 1]
 ```
 hal ini didapat dikarenakan projeksi matrix memiliki 8 DoF, diantaranya adalah 6 DoF matriks affine, dan 2 DoF yang baru yaitu, v1 dan v2.
 
