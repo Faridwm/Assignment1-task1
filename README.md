@@ -10,17 +10,15 @@ Tranlasi adalah pergeseran suatu objek, baik itu titik, garis, maupun bidang den
 Jika sebuah titik A = (x, y) di transalsikan oleh (tx, ty), maka akan diperoleh koordinat titik baru A' = (x' + y') dengan x' = x + tx dan y' = y + ty.
 
 Didalam buku Computer Vision: Algorithms and Applications notasi tranlasi ditulis dengan 
-$$x' = 
-\begin{bmatrix} 
-I & t 
-\end{bmatrix} 
-\overline{x}$$ 
+```python
+x' = [I, t] x
+```
 
-Dengan $I$ merupakan matriks identitas (2 x 2). Karena kita menggunakan *homogeneous coordinates* maka koordinat titik $A$ dinyatakan dengan $A = (x, y, 1)$. Maka notasinya menjadi 
+Dengan I merupakan matriks identitas (2 x 2). Karena kita menggunakan *homogeneous coordinates* maka koordinat titik A dinyatakan dengan A = (x, y, 1). Maka notasinya menjadi 
 
 ```python
 x' = [I & t]
-     [0^T & 1] @ x
+     [0^T & 1] x
 ```
 
 Dengan notasi matriks diatas, didapat matriks pengali translasi pada *homogeneous coordinates* sebagai berikut
@@ -29,17 +27,17 @@ Dengan notasi matriks diatas, didapat matriks pengali translasi pada *homogeneou
                [1, 0, tx],
                [0, 1, ty],
                [0, 0, 1]
-             ] @ [x, y, 1]
+             ]  [x, y, 1]
 
 ```
 
 Atau dapat di tulis $$
 ```python
-A '= [
+A' = [
        [1, 0, tx],
        [0, 1, ty],
        [0, 0, 1]
-     ] @ A
+     ]  A
 
 ```
 
