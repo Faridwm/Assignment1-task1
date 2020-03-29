@@ -9,5 +9,5 @@ Tranlasi adalah pergeseran suatu objek, baik itu titik, garis, maupun bidang den
 Jika sebuah titik $A = (x, y)$ di transalsikan oleh $(tx, ty)$, maka akan diperoleh koordinat titik baru $A' = (x' + y')$ dengan $x' = x + tx$ dan $y' = y + ty$.
 
 ```math
-$A = (x, y)$
+$ `A = (x, y)` $
 ```
