@@ -8,6 +8,4 @@
 Tranlasi adalah pergeseran suatu objek, baik itu titik, garis, maupun bidang dengan jarak dan arah tertentu. Translasi ditanyakan dengan vector $(tx, ty)$, dimana $tx$ merupakan pergesaran pada sumbu x, sedangkan $ty$ merupakan pegeseran pada sumbu y.
 Jika sebuah titik $A = (x, y)$ di transalsikan oleh $(tx, ty)$, maka akan diperoleh koordinat titik baru $A' = (x' + y')$ dengan $x' = x + tx$ dan $y' = y + ty$.
 
-```latex
-$ A = (x, y) $
-```
+```math A = (x, y)```
