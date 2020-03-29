@@ -91,7 +91,7 @@ Dengan *homogeneus coordinates* notasi matriks rotasi + translasi dapat ditulis 
 ```code
 [x', y', 1] = [
       [cos(theta), -sin(theta), tx],
-      [sin(theta), cos(theta),  0ty,
+      [sin(theta), cos(theta),  ty],
       [0, 0, 1]
     ] [x, y, 1]
 ```
@@ -138,4 +138,33 @@ A' = [
       [0, 0, 1]
      ] A
 ```
+
+# Affine
+Affine merupakan transformasi yang merupakan kombinasi dari transformasi translasi, rotasi dan diltasi. transformasi ini mempertahankan bentuk dasar dan integritas bangun geometri. 
+
+Notasi transformasi affine ditulis sebagai berikut
+```code
+A' = [
+       [sR, t],
+       [0^T, 1]
+     ] A
+```
+atau dapat dijabarkan sebagai berikut
+```code
+[x', y', 1] = [
+      [s* cos(theta), -sin(theta), tx],
+      [sin(theta), s* cos(theta),  ty,
+      [0, 0, 1]
+    ] [x, y, 1]
+```
+atau dapat ditulis
+```code
+A' = [
+      [s* cos(theta), -sin(theta), tx],
+      [sin(theta), s* cos(theta),  ty,
+      [0, 0, 1]
+    ] A
+```
+
+
 
