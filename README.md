@@ -6,7 +6,7 @@
 
 # Translasi
 
-Tranlasi adalah pergeseran suatu objek, baik itu titik, garis, maupun bidang dengan jarak dan arah tertentu. Translasi ditanyakan dengan vector (tx, ty), dimana tx merupakan pergesaran pada sumbu x, sedangkan ty merupakan pegeseran pada sumbu y.
+Tranlasi adalah pergeseran suatu objek, baik itu titik, garis, maupun bidang dengan jarak dan arah tertentu. Translasi ditanyakan dengan vector (tx, ty), dimana tx merupakan pergesaran pada sumbu x, sedangkan ty merupakan pegeseran pada sumbu y, hal ini lah yang membuat translasi memiliki 2 DoF (*Degree of Freedom*) yaitu tx dan ty
 Jika sebuah titik A = (x, y) di transalsikan oleh (tx, ty), maka akan diperoleh koordinat titik baru A' = (x' + y') dengan x' = x + tx dan y' = y + ty.
 
 Didalam buku Computer Vision: Algorithms and Applications notasi tranlasi ditulis dengan 
@@ -68,7 +68,7 @@ y' = x . sin(theta) + y . cos(theta)
 ```
 
 ## Rotasi + Translasi
-Rotasi + translasi disebut juga dengan *2D Euclidean transformation*. Notasi dari rotasi + translasi dapat ditulis dengan  A' = RA + t atau
+Rotasi + translasi disebut juga dengan *2D Euclidean transformation*, transformasi ini memiliki 3 DoF yaitu *theta*, tx, dan ty. Notasi dari rotasi + translasi dapat ditulis dengan  A' = RA + t atau
 ```code
 A' = [R t] A
 ```
@@ -152,19 +152,44 @@ A' = [
 atau dapat dijabarkan sebagai berikut
 ```code
 [x', y', 1] = [
-      [s* cos(theta), -sin(theta), tx],
-      [sin(theta), s* cos(theta),  ty,
+      [s* cos(theta), s *-sin(theta), tx],
+      [s* sin(theta), s * cos(theta),  ty,
       [0, 0, 1]
     ] [x, y, 1]
 ```
 atau dapat ditulis
 ```code
 A' = [
-      [s* cos(theta), -sin(theta), tx],
-      [sin(theta), s* cos(theta),  ty,
+      [s * cos(theta), s * -sin(theta), tx],
+      [s * sin(theta), s * cos(theta),  ty,
       [0, 0, 1]
     ] A
 ```
 
+# Projeksi
+Transformasi ini, juga dikenal sebagai transformasi perspektif atau homografi, trasnformasi ini beroperasi pada koordinat yang homogen.
+menurut [artikel Projective Transformations in 2D](https://mc.ai/part-ii-projective-transformations-in-2d/) dijelaskan bahwa Projeksi adalah transformasi linear pada 3-vektor homogen yang diwakili oleh matriks 3 × 3 non-singular.
+
+Kita dapat merepresentasikan matriks projeksi sebagai berikut
+```code
+[x', y', 1]=[[a11, a12, a13],
+             [a21, a22, a23],
+             [a31, a32, v  ]]  [x, y, 1]
+```
+dengan v = 1 atau v = 0, dan dapat disederhanakan menjadi 
+```code
+[wx', wy', w] = [[1,   0, 0],
+                [0,   1, 0],
+                [v1, v2, v]] [x, y, 1]
+```
+hal ini didapat dikarenakan projeksi matrix memiliki 8 DoF, diantaranya adalah 6 DoF matriks affine, dan 2 DoF yang baru yaitu, v1 dan v2.
+
+Dalam perhitungan matriks, elemen w juga terhitung dalam matriks, sehingga membuat hasil perkalian matriks menjadi dalam dimensi 3.
+maka untuk mendapatkan nilai matriks dalam dimensi 2 hasil perkalian matriks di bagi dengan nilai w, dimana w = v1x + v2y + v. sehingga didapat
+```code
+x' = x / (v1x + v2y + v)
+dan
+y' = y / (v1x + v2y + v)
+```
 
 
