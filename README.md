@@ -99,16 +99,15 @@ atau
 ```code
 A' = [
       [cos(theta), -sin(theta), tx],
-      [sin(theta), cos(theta),  0ty,
+      [sin(theta), cos(theta),  ty,
       [0, 0, 1]
     ] A
 ```
 
-Dari eksperimen yang dilakukan rotasi + translasi dapat diartikan transformasi objek dengan cara di rotasi-kan sebesar *theta* kemudian di translasikan pada sumu x sebsar tx dan pada sumbu y sebesar ty.
+Dari eksperimen yang dilakukan rotasi + translasi dapat diartikan transformasi objek dengan cara di rotasi-kan sebesar *theta* kemudian di translasikan pada sumbu x sebesar tx dan pada sumbu y sebesar ty.
 
 # Dilatasi
-Dilatasi merupakan trasnformasi untuk memperbesar atau memperkecil ukuran sebuah objek tanpa merubah bentuk dari objek tersebut.
-Jika sebuah titik A = (x, y) di dilatasikan dengan skala s, maka akan diperoleh koordinat titik yang baru sebagai berikut
+Dilatasi merupakan transformasi untuk memperbesar atau memperkecil ukuran sebuah objek tanpa merubah bentuk dari objek tersebut. Jika sebuah titik A = (x, y) di dilatasikan dengan skala s, maka akan diperoleh koordinat titik yang baru sebagai berikut:
 ```code
 x' = sx
 y' = sy
@@ -167,9 +166,8 @@ A' = [
 ```
 
 # Projeksi
-Transformasi ini, juga dikenal sebagai transformasi perspektif atau homografi, trasnformasi ini beroperasi pada koordinat yang homogen.
-menurut [artikel Projective Transformations in 2D](https://mc.ai/part-ii-projective-transformations-in-2d/) dijelaskan bahwa Projeksi adalah transformasi linear pada 3-vektor homogen yang diwakili oleh matriks 3 × 3 non-singular.
-
+Transformasi ini, juga dikenal sebagai transformasi perspektif atau homografi, transformasi ini beroperasi pada koordinat yang homogen. 
+menurut [artikel Projective Transformations in 2D](https://mc.ai/part-ii-projective-transformations-in-2d/)  dijelaskan bahwa, Projeksi adalah transformasi linear pada 3-vektor homogen yang diwakili oleh matriks 3 × 3 non-singular.
 Kita dapat merepresentasikan matriks projeksi sebagai berikut
 ```code
 [x', y', 1]=[
@@ -186,10 +184,9 @@ dengan v = 1 atau v = 0, dan dapat disederhanakan menjadi
                   [v1, v2, v]
                 ] [x, y, 1]
 ```
-hal ini didapat dikarenakan projeksi matrix memiliki 8 DoF, diantaranya adalah 6 DoF matriks affine, dan 2 DoF yang baru yaitu, v1 dan v2.
+Hal ini didapat dikarenakan projeksi matriks memiliki 8 DoF, diantaranya adalah 6 DoF matriks affine, dan 2 DoF yang baru yaitu, v1 dan v2.
 
-Dalam perhitungan matriks, elemen w juga terhitung dalam matriks, sehingga membuat hasil perkalian matriks menjadi dalam dimensi 3.
-maka untuk mendapatkan nilai matriks dalam dimensi 2 hasil perkalian matriks di bagi dengan nilai w, dimana w = v1x + v2y + v. sehingga didapat
+Dalam perhitungan matriks, elemen w juga terhitung dalam matriks, sehingga membuat hasil perkalian matriks menjadi dalam dimensi 3. maka untuk mendapatkan nilai matriks dalam dimensi 2 hasil perkalian matriks di bagi dengan nilai w, dimana w = v1x + v2y + v. sehingga didapat
 ```code
 x' = x / (v1x + v2y + v)
 dan
