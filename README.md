@@ -6,8 +6,8 @@
 
 # Translasi
 
-Tranlasi adalah pergeseran suatu objek, baik itu titik, garis, maupun bidang dengan jarak dan arah tertentu. Translasi ditanyakan dengan vector (tx, ty), dimana tx merupakan pergesaran pada sumbu x, sedangkan ty merupakan pegeseran pada sumbu y, hal ini lah yang membuat translasi memiliki 2 DoF (*Degree of Freedom*) yaitu tx dan ty
-Jika sebuah titik A = (x, y) di transalsikan oleh (tx, ty), maka akan diperoleh koordinat titik baru A' = (x' + y') dengan x' = x + tx dan y' = y + ty.
+Translasi adalah pergeseran suatu objek, baik itu titik, garis, maupun bidang dengan jarak dan arah tertentu. Translasi dinyatakan dengan vector (tx, ty), dimana tx merupakan pergesaran pada sumbu x, sedangkan ty merupakan pegeseran pada sumbu y, hal ini lah yang membuat translasi memiliki 2 DoF (*Degree of Freedom*) yaitu tx dan ty. Jika sebuah titik A = (x, y) di translasikan oleh (tx, ty), maka akan diperoleh koordinat titik baru A' = (x' + y') dengan x' = x + tx dan y' = y + ty.
+
 
 Didalam buku Computer Vision: Algorithms and Applications notasi tranlasi ditulis dengan 
 ```python
