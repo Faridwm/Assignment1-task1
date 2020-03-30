@@ -1,5 +1,10 @@
 # Originality
 
+Library yang digunakan adalah
+1. numpy untuk operasi matriks
+2. matplotlib.pyplot untuk memplot bidang 2 dimensi
+3. string untuk penamaan titik pada gambar
+
 Untuk memplot gambar saya melihat referensi dari [web ini](https://stackabuse.com/affine-image-transformations-in-python-with-numpy-pillow-and-opencv/)
 dan memodifikasi sesuai dengan kebutuhan saya
 
